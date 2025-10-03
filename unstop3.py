@@ -10,7 +10,7 @@ from sklearn.metrics import accuracy_score
 # -----------------------------
 @st.cache_resource
 def load_model():
-    file_path = r"C:\Users\mades\Downloads\Original.xlsx" 
+    file_path = "Original.xlsx" 
     data = pd.read_excel(file_path, sheet_name="original")
 
     features = ["Linguistic", "Musical", "Bodily", 
@@ -136,3 +136,4 @@ if st.button("Predict My Career"):
     st.success(f"**High Possibility:** {careers_sorted[0]} ({probs_sorted[0]*100:.2f}%)")
     st.info(f"**Average Possibility:** {careers_sorted[1]} ({probs_sorted[1]*100:.2f}%)")
     st.warning(f"**Less Possibility:** {careers_sorted[2]} ({probs_sorted[2]*100:.2f}%)")
+
